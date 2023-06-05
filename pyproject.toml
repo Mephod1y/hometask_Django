@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "hometask-django"
+version = "0.1.0"
+description = ""
+authors = ["Mephod1y <mephodiy@i.ua>"]
+readme = "README.md"
+packages = [{include = "hometask_django"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2"
+psycopg2 = "^2.9.6"
+django-bootstrap4 = "^23.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

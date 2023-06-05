@@ -2,35 +2,36 @@
 
 {% block content %}
 
-<form method="POST" action="{% url 'quotesapp:author' %}">
-    {% csrf_token %}
-    <div style="padding: 10px">
-        <label> Fullname:
-            {{ form.fullname }}
-        </label>
-        <span>{{ form.errors.fullname }}</span>
-    </div>
-    <div style="padding: 10px">
-        <label> Birthday:
-            {{ form.birthday }}
-        </label>
-        <span>{{ form.errors.birthday }}</span>
-    </div>
-    <div style="padding: 10px">
-        <label> Was born:
-            {{ form.born }}
-        </label>
-        <span>{{ form.errors.born }}</span>
-    </div>
-    <div style="padding: 10px">
-        <label> Description:
+<div class="container">
+    <form method="POST" action="{% url 'quotesapp:add-author' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label> Author fullname:
+                {{ form.fullname }}
+            </label>
+            <span>{{ form.errors.fullname }}</span>
+        </div>
+        <div class="form-group">
+            <label>Birthday:
+                {{ form.birthday }}
+            </label>
+            <span>{{ form.errors.Birthday }}</span>
+        </div>
+        <div class="form-group">
+            <label> Born:
+                {{ form.born }}
+            </label>
+            <span>{{ form.errors.born }}</span>
+        </div>
+        <label> Description:</label>
+        <div class="form-group">
             {{ form.description }}
-        </label>
-        <span>{{ form.errors.description }}</span>
-    </div>
-    <div class="grid">
-        <button type="submit">Submit</button>
-        <button type="reset" class="secondary">Reset</button>
-    </div>
-</form>
+            <span>{{ form.errors.description }}</span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+    </form>
+</div>
 {% endblock %}
