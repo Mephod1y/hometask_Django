@@ -23,7 +23,7 @@ Quotes
                         <small>Tags:</small>
                         {% for tag in quote.tags.all %}
                         <span class="badge badge-pill badge-sm badge-warning">
-                        <a href="{% url 'quote:search-tag' tag.name %}"><i>{{ tag.name }}</i></a>
+                        <a href="{% url 'quote:search-tag' tag.name %}"><i>{{ tag.tag }}</i></a>
                       </span>
                         {% empty %}
                         <span class="badge badge-pill badge-sm badge-warning">
@@ -70,7 +70,7 @@ Quotes
             <ol>
                 {% for tag in top_tags %}
                 <li>
-                    <a href="{% url 'quote:search-tag' tag.name %}">{{ tag.name }}</a>
+                    <a href="{% url 'quote:search-tag' tag.tag %}">{{ tag.tag }}</a>
                 </li>
                 {% endfor %}
             </ol>
